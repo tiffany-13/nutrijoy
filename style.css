@@ -1842,6 +1842,16 @@ article.twcbody{
 div.whole {
 	margin: 3% 2%;
 }
+@media (max-width: 768px) {
+	.whole{
+		display:flex;
+		flex-direction:column;
+	}
+	.tiff,.angie,.jiaxuan{
+		min-width:80%;
+		margin-bottom:2%;
+	}
+}
 .twc_title{
 	font-weight:bold;
 	color:#5c8a68;
