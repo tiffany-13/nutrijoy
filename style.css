@@ -1,0 +1,1912 @@
+/*Description: NutriJoy Website*/
+/*Author: Tiffany Lee Sze Thing, Kee Jia Xuan, Angie Yee Ang Chyi*/
+/* Date: 05/10/24*/
+/*Validated: ok 3 December 2024*/
+
+
+/*--Applicable to all web pages------------------------------------------------------------------------------------*/
+body, footer, header{
+	font-family: Tahoma, sans-serif;
+	margin:0;
+	padding:0;
+	width:100%;
+	display: flex; /* Allow flexible alignment and distribution of child elements */
+	flex-direction: column; /* Arrange the child elements of the container in a vertical layout from top to bottom */
+	gap: 0; /* Sets the spacing between child elements inside the container to 0 */	
+}
+/*Header banner*/
+.headervid{
+	width:100%;
+	text-align:center;
+	background-color:#b5f1cc;
+}
+
+.headervid video{
+	margin:0;
+	object-fit:cover;/* Ensures the video covers the entire area without stretching */
+}
+/*Website logo*/
+.websitelogo{
+	display:inline-block;
+	margin:auto;
+}
+/*Header Social media image links*/
+.socmedlogo{
+	display:inline-block;
+	position:absolute;
+	right:17.5%;
+	top:30%;
+	border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adds smooth transitions.
+   - "transform 0.3s ease": The transformation effect will take 0.3 seconds and ease in/out smoothly.
+   - "box-shadow 0.3s ease": Changes to the shadow effect will take 0.3 seconds and ease in/out smoothly. */
+}
+.socmedlogo img{
+	border-radius:60%;
+}
+.socmedlogo img:hover {
+    transform: scale(1.1);/* Scales the element to 110% of its original size */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);/* Adds a shadow around the element:
+   - "0px": No horizontal offset for the shadow.
+   - "4px": Vertical shadow offset (4px below the element).
+   - "8px": Blur radius, making the shadow softer as it spreads.
+   - "rgba(0, 0, 0, 0.2)": Shadow color is black with 20% opacity*/
+}
+/* Navigation bar */
+nav {
+    width: 100%;
+    background-color: #e257e0;
+    font-size: 1.3em;
+    font-family: Tahoma, sans-serif;
+    z-index: 10;
+    pointer-events: auto;/* Ensures the element receives mouse, touch, or pointer input.*/
+    max-width: 100%;
+    overflow-x: hidden;
+	overflow:visible;
+}
+
+nav ul {
+    display: flex; /* Enables a flexbox layout, allowing child elements to align and distribute space dynamically within the container */
+	flex-wrap: wrap; /* Allows child elements to wrap onto the next line if they exceed the width of the container */
+	justify-content: center; /* Aligns the child elements horizontally to the center of the container */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    flex: 1 1 auto;
+    padding: 0.7% 2%;
+    text-align: center;
+    white-space: nowrap; /*All text remains on a single line, even if it overflows the container.*/
+    position: relative;
+}
+
+nav ul li a {
+    color: #e4fcd0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li:hover {
+    background-color: #fec0ff;
+}
+
+nav ul li:hover > a {
+    color: #333333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav ul li {
+        font-size: 0.9em;
+        padding: 0.5% 1%;
+    }
+}
+
+/* Dropdown menu styling */
+nav ul li .dropdown {
+    display: none; /* Hide dropdown by default */
+    position: absolute; 
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    border-radius: 8px; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    width: 15vw; /* Use viewport width for responsiveness */
+    min-width: 200px; /* Ensure a minimum size */
+    max-width: 300px;
+    margin-top: 10px;
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+	/*
+   - "opacity" controls the fading effect when the element's visibility changes
+   - "transform"  controls the movement of the element along the Y-axis
+   - duration of both transitions is 0.3 seconds
+   - "ease" ensures the transitions start slowly, speed up in the middle, and slow down towards the end.*/
+    opacity: 0;
+    transform: translateY(-10px);
+	/*-shift the element's position vertically by -10 pixels along the Y-axis
+   - negative 10 move the element upward*/
+    z-index: 1000;
+}
+
+nav ul li:hover .dropdown {
+    display: block;
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+nav ul li .dropdown li {
+    display: block;
+    padding: 10px 15px;
+    font-size: 1em;
+    color: #333333;
+    background-color: #ffffff;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Responsive Adjustments for Text Size */
+@media (max-width: 768px) {
+    nav ul li .dropdown li {
+        font-size: 0.9rem;
+    }
+
+    nav ul li .dropdown {
+        min-width: 180px; 
+    }
+}
+
+nav ul li .dropdown li a {
+    color: #333333;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 6px;
+    background-color: #ffffff;
+	white-space: normal; /* Enable text wrapping */
+    word-wrap: break-word; /* Ensure long words wrap */
+    overflow-wrap: break-word; /* Modern property for long word wrapping */
+    transition: background-color 0.3s ease, color 0.3s ease;
+	/*transition to background color & text color*/
+}
+
+nav ul li .dropdown li a:hover {
+    background-color: #e257e0;
+    color: #ffffff;
+}
+
+/*Planpal button*/
+.planpalbutton{
+	position:fixed;
+	top:50%;
+	right:3%;
+	z-index:1000;
+	transition: transform 0.3s ease; /*transition to transform property*/
+	border-radius:50%;
+}
+.planpalbutton:hover {
+	transform: translateY(-5px);
+	box-shadow: 0px 4px 20px 10px rgba(0, 0, 0, 0.2);
+}
+/* General Footer */
+footer {
+  color: #333333;
+  padding: 2% 1%;
+  width:98%;
+  font-family: Tahoma, sans-serif;
+  background-color:#e8ede9;
+}
+.footer-container {
+  display: flex;
+  flex-direction: row; /*elements arranged vertically from top to bottom*/
+  width:100%;
+  align-items: center;
+}
+
+/* Footer Social Media Section */
+.footer-social {
+  text-align: center;
+  width:25%;
+  padding-bottom:1%;
+  text-align:center;
+}
+
+.footer-social h4 {
+  margin-bottom: 4%;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #6f42c1;
+  text-shadow: 3px 2px #F7E5C6;
+}
+
+.social-icons a img {
+  width: 14%;
+  height:14%;
+  margin: 0 2%;
+  border-radius:50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer Links Section */
+.footer-links {
+  display: flex;
+  width: 75%;
+  text-align:left;
+}
+
+.footer-links .column {
+  text-align: center;
+  margin:0 3%;
+}
+
+.footer-links h5 a{
+  font-size: 1.8em;
+  margin-bottom: 5%;
+  color: #6f42c1;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 8%;
+}
+
+.footer-links ul li a {
+	font-size:1.2em;
+  text-decoration: none;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover, .footer-links h5 a:hover{
+  color:#e257e0;
+  font-weight: bold;
+}
+.footer-links ul li a:active, .footer-links h5 a:active{
+	color:#3c805a;
+  font-weight: bold;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+  text-align: center;
+  font-size: 1.2em;
+  color: #777;
+  width:100%;
+}
+
+.footer-bottom a {
+	width:100%;
+  color: #6f42c1;
+  text-decoration: none;
+}
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+/*---Home page--------------------------------------------------------------------------*/
+/*Homepage Quote*/
+.planpalheader{
+	position:relative;
+	background-color:#cecece;
+	width:100%;
+}
+.quoteimg{
+	width:48%;
+	margin:0;
+	margin-right:1%;
+	min-height:400px;
+	max-height:300px;
+	opacity:0.8;
+	float:left;
+	background-image:url(images/home/quote.jpg); /* This information is taken from https://i0.wp.com/chicagochinesetimes.com/wp-content/uploads/2023/04/1-10.jpg?resize=768%2C432&ssl=1 */
+	font-size:1.7em;
+	color:#e4fcd0;
+	font-family:"Trebuchet MS" , sans-serif;
+	display: flex;
+    flex-direction: column; /* Stack title and images vertically */
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+	background-position: center;
+}
+.background_grey{
+	background-color:#666666;
+	width:100%;
+}
+@media (max-width: 768px) {
+	.planpalheader{
+		display:flex;
+		flex-wrap:wrap;
+	}
+	.planpalheader p q{
+		font-size:0.8em;
+	}
+	.shortintro p,.shortintro h1,.shortintro h2{
+		font-size:0.8em;
+	}
+}
+/*Homepage Short Description*/
+.shortintro{
+	width:50%;
+	max-height:400px;
+	font-family:"Trebuchet MS" , sans-serif;
+	color:#545454;
+	font-size:1.2em;
+	overflow-y: scroll; 
+}
+div.shortintro h1{
+	color:#e257e0;
+	text-align:center;
+}
+div.shortintro h2{
+	color:#d4843b;
+	text-decoration:underline;
+	text-align:center;
+}
+
+/*Homepage top picks & user comment*/
+.gradient{
+	width:100%;
+	background-color:#b5f1cc;
+}
+.homerow{
+	width:94%;
+	box-sizing:border-box;
+	display:block;
+	margin:2% 2%;
+	display:flex;
+}
+.homecolumn{
+	flex: 1 1 calc(45% - 20px); /* Each item takes 45% of the container minus gap */
+    max-width: 45%; /* Ensures no item exceeds this width */
+    margin: 1.5%; /* Adds spacing around each item */
+    background-color: #fcf4de;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 1%;
+	transition: box-shadow 0.3s ease; /*transition to box-shadow*/
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+	.homerow{
+		flex-wrap: wrap; /* Allows items to wrap onto the next line */
+		justify-content: center; /* Centers items in the container */
+		gap: 20px; /* Adds space between items */
+	}
+    .homecolumn {
+        flex: 1 1 100%; /* Items take full width on smaller screens */
+        max-width: 100%;
+    }
+}
+.homecolumn:hover {
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+	transition: transform 0.3s ease;
+}
+.homecolumn img{
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /*Creates a shadow effect*/
+    transition: transform 0.3s ease;   
+	width:100%;
+	height:94%;
+	max-height:300px;
+}
+
+.homecolumn img:hover {
+    transform: scale(1.05);
+}
+
+h1.homepgheading{
+	font-family: "Trebuchet MS" , sans-serif;
+	color:#545454;
+	font-size:2em;
+	margin:4% 20%;
+	background: linear-gradient(135deg, #e6dbb1, #f8bcbc); /*create gradient color*/
+	border-radius: 15px;
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); 
+	text-align: center;
+	clear:both;
+}
+figure.homecolumn figcaption{
+	font-size:1.4em;
+	color:#995f2a;
+	text-align:center;
+	font-family: "Trebuchet MS" , sans-serif;
+	margin:2%;
+}
+figure.homecolumn figcaption.homebold{
+	font-weight:bold;
+	font-size:1.4em;
+}
+.homecolumn a {
+	text-decoration:none;
+}
+/*History Timeline*/
+.history_body{
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  font-family: Tahoma, sans-serif;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #e6dbb1, #f8bcbc);
+  clip-path: path("M0,50 C300,-100 600,300 900,50 C1200,-100 1500,300 1800,50 L1800,600 C1500,500 1200,700 900,600 C600,500 300,700 0,600 Z");
+  /*define a custom clipping shape using the `path()` function.
+   - "M0,50": Moves the starting point of the path to coordinates (0, 50).
+   - "C300,-100 600,300 900,50": Creates a cubic Bézier curve from the starting point to (900, 50), with control points at (300, -100) and (600, 300).
+   - "C1200,-100 1500,300 1800,50": Another cubic Bézier curve ending at (1800, 50) with control points at (1200, -100) and (1500, 300).
+   - "L1800,600": Draws a straight line from the current position (1800, 50) to (1800, 600).
+   - "C1500,500 1200,700 900,600": Creates another Bézier curve from (1800, 600) to (900, 600), with control points at (1500, 500) and (1200, 700).
+   - "C600,500 300,700 0,600": A final Bézier curve from (900, 600) back to (0, 600), with control points at (600, 500) and (300, 700).
+   - "Z": Closes the path, connecting the last point (0, 600) back to the starting point (0, 50).
+   - wavy top and bottom shape.*/
+  height: 700px; 
+  color:#C21807;
+}
+#history_heading{
+	width:100%;
+}
+.intro_container{
+	width:100%;
+}
+.timeline-container {
+  position: relative;
+  width: 100%;
+  max-width: 3500px;
+}
+
+.timeline-container h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 1.5em;
+}
+
+.timeline {
+  width: 100%;
+  height: 150px;
+}
+
+.pin {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #FF4D4D;
+  border-radius: 50%;
+  border: 2px solid #A93226;
+  transform: translate(-50%, -50%); /*Move the element by 50% of its own width to the left and 50% of its own height upward.*/
+}
+
+#event1, #event2, #event3, #event4{
+  position: absolute;
+  background: #fcf4de;
+  padding: 15px;
+  border-radius: 8px;
+  width: 180px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%); /**/
+}
+.history_body h1, .history_body h2{
+	font-size:1.5em;
+}
+.history_body img.fan{
+	position:absolute;
+	bottom:60%;
+	right:83%;
+}
+.history_body img.flower{
+	position:absolute;
+	bottom:65%;
+	left:80%;
+}
+.intro_container p{
+	width:80%;
+	margin:auto;
+	font-size:1.2em;
+}
+
+#event1 h2, #event2 h2, #event3 h2, #event4 h2 {
+  margin: 0;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.content p {
+  margin: 10px 0 0;
+  font-size: 1.2em;
+}
+#event1 {
+  left: 15%;
+  top: 48%;
+}
+
+#event2 {
+  left: 40%;
+  top: 47%;
+}
+
+#event3 {
+  left: 64%;
+  top: 63%;
+}
+
+#event4 {
+  left: 85%;
+  top: 63%;
+}
+.history_paragraph{
+	visibility:hidden;
+	width:80%;
+	margin:auto;
+	font-size:1.2em;
+}
+@media (max-width: 1300px) {
+	.history_paragraph{
+		visibility:visible;
+	}
+	#event1{
+		display:none;
+	}
+	#event2{
+		display:none;
+	}
+	#event3{
+		display:none;
+	}
+	#event4{
+		display:none;
+	}
+	svg{
+		display:none;
+	}
+	.whole-sildeshow p{
+		font-size:0.9em;
+	}
+	.history_body{
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* A rectangle */
+		margin-bottom:5%;
+		height:auto;
+		padding-bottom:5%;
+	}
+}
+/* Homepage Image Slideshow */
+.whole-sildeshow {
+  font-family: "Trebuchet MS", sans-serif;
+  background-color: #fcf4de;
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin: auto;
+  border-radius: 20px; 
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2); 
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.slideshow-heading {
+  width: 30%;
+  margin: auto;
+  font-size: 1.4em;
+  color: #2c3e50;
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.slideshow-heading h1 {
+  font-size: 1.5em;
+  color: #e74c3c; 
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+.slideshow-heading h2 {
+  font-size: 1.2em;
+  color: #34495e; 
+  margin-bottom: 20px;
+}
+
+.slideshow-heading img {
+  margin-top: 20px;
+  border-radius: 50%; 
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); 
+}
+
+.mySlides img {
+  border-radius: 15px;
+  height: 455px;
+  width: 700px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2); 
+}
+
+/* Slideshow container */
+.slideshow-container {
+  height: 495px;
+  width: 60%;
+  position: relative;
+  margin-top:0.5%;
+  margin-right: 10%;
+   flex: 1 1 50%;
+  max-width: 600px;
+}
+
+/* Next & Previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%; 
+  left: 0; 
+  right: 0;
+  transform: translateY(-30%);
+  width: 40px; 
+  height: 40px;
+  display: flex;
+  justify-content: center; /*Horizontally aligns child elements in the center of the container along the main-axis*/
+  align-items: center; /*Vertically aligns child elements in the center of the container along the cross-axis*/
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.prev:hover, .next:hover {
+  background-color: #3498db; 
+  transform: scale(1.1);
+}
+/* Position the "prev button" to the left */
+.prev {
+  left: 3%; 
+}
+
+/* Position the "next button" to the right */
+.next {
+  left: 90%;
+}
+
+/* Caption text */
+.text {
+  color: #2c3e50; 
+  background-color: rgba(255, 255, 255, 0.9); 
+  font-size: 1.2em;
+  padding: 12px 16px;
+  position: absolute;
+  bottom: 15%;
+  width: 95%;
+  text-align: center;
+  border-radius: 10px; 
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+/* Number text (1/4 etc) */
+.numbertext {
+  color: #ffffff;
+  background-color: #2c3e50;
+  font-size: 1em;
+  padding: 6px 12px;
+  position: absolute;
+  top: 0;
+  border-radius: 5px;
+}
+
+/* Dots */
+.dot_container {
+  text-align: center;
+}
+
+.dot {
+  cursor: pointer;/*change the cursor to pointer shape*/
+  height: 12px;
+  width: 12px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease, transform 0.3s ease;
+}
+
+.dot:hover {
+  background-color: #3498db; 
+  transform: scale(1.2);
+}
+
+.active {
+  background-color: #e74c3c; 
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade; /*apply fade animation*/
+  animation-duration: 1.5s;/*animation take 1.5s*/
+}
+@keyframes fade {
+  from {opacity: .4} /*start with opacity 40%*/
+  to {opacity: 1} /*to opacity 100%*/
+}
+/*Homepage disclamer*/
+#disclamer{
+	text-align:justify;
+	font-family:"Trebuchet MS" , sans-serif;
+	font-size:1.3em;
+	width:80%;
+	padding:2%;
+	margin:2% 6%;
+	background-color:#fec0ff;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+#dis{
+	color:red;
+	text-decoration:underline;
+}
+
+/*---PlanPal Page-------------------------------------------------------------------------------*/
+.darkgreenbackground{
+	background: linear-gradient(135deg, #7bc1cb, #d9d9d9, #7bc1cb);
+}
+
+/*PlanPal icon*/
+.planpalicon1{
+	display: flex;
+	flex-wrap: wrap;
+	position:relative;
+	padding-left:2%;
+	top:45px;
+	left: 50px;
+	z-index:1;
+	margin:0 0.3%;
+}
+
+/*PlanPal speech box*/
+.dialog1{
+	margin: auto;
+	text-align: center;
+	width: 65%;
+	padding: 1%;
+	background: #b5f1cc;
+	position: relative;
+	top: -50px;
+	left: 85px;
+	font-size: 1.5em;
+	color: #006622;
+	font-family: "Trebuchet MS" , sans-serif;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dialog1:before {
+      content: ""; /*no content, just for styling*/
+      position: absolute;
+      left:-38px;
+	  top:5px;
+      border-top: 20px solid transparent;
+      border-right: 40px solid #b5f1cc;
+      border-bottom: 20px solid transparent;
+	  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.2); /*inset shadow*/
+}
+
+/*PlanPal category selection (form)*/
+.foodform{
+	width: 90%;
+	margin:0.5% auto;
+	text-align:center;
+	background-color:#f2f2f2;
+	padding:3%;
+	border-radius:10%;
+	box-shadow:0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.foodform h1{
+	color:#7bc1cb;
+	text-shadow:2px 2px #b5f1cc;
+	font-size: 2.2em;
+	font-family: "Trebuchet MS" , sans-serif;
+}
+
+.foodform div{
+	display:inline-block;
+	width: 20%;
+	margin-left:4%;
+	margin-right:4%;
+}
+
+.foodform div figcaption{
+	text-align:center;
+	font-size:1.5em;
+	font-family:Tahoma, sans-serif;
+	color:#545454;
+	padding: 1% 0; 
+}
+
+.foodform div img{
+	width:120%;
+	height:12em;
+}	
+
+input[type="checkbox"]{
+  width: 3em;
+  height: 90%;
+  width: 3em;
+  height: 3rem;
+  accent-color: green; /*change the checkbox & outline to green*/
+}
+
+#button{
+	background-color: #00bf15;
+    color: white;
+	width:80%;
+    border-color: white;
+	border-width:0.3em;    
+	border-radius: 7px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.2em;
+	font-family:Tahoma, sans-serif;
+    display: block;
+    margin:auto;
+}
+
+#button:hover {
+    background-color: #7bc1cb;
+}
+
+/*PlanPal feedback link*/
+.dialog1 a{
+	color:#006622;
+}
+
+.dialog1 a:hover{
+	color: #49a8b6;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+/*PlanPal feedback link*/
+.dialog1 a{
+	color:#006622;
+}
+
+.dialog1 a:hover{
+	color: #49a8b6;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+/*PlanPal random food generated result*/
+.result{
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+	background-color:#e4fcd0;
+	width:90%;
+	text-align:center;
+	margin:2% auto;
+	border-radius:2%;
+}
+
+.food-item a{
+	font-size: 1em;
+	font-family:"Trebuchet MS" , sans-serif;
+	color:#e257e0;
+	text-decoration:none;
+}
+
+.food-item a:hover{
+	text-decoration:underline;
+	color:#7bc1cb;
+	font-family:Tahoma, sans-serif;
+}
+
+.food-item img{
+	border-radius:5px;
+	box-shadow: 7px 7px;
+}
+
+.food-item{
+    display: inline-block; 
+    text-align: center; 
+    width: 30%;
+	margin:0 1%;
+}
+
+@media (max-width: 768px) {
+    .food-item{
+		display: block; 
+		margin: auto; 
+	}
+	.dialog1{
+		max-width:300px;
+	}
+}
+
+/*---Recipe Pages---------------------------------------------------------------------------*/
+/*Article background color*/
+.lightgreenbackground{
+	width:100%;
+	background: linear-gradient(135deg, #e4fcd0, #c7e8c7, #fdd7f3);
+
+}
+/*General layout*/
+.recipe_top{
+    width: 100%;
+	display: flex; /* Enables a flexbox layout for the container, allowing child elements to align and distribute space dynamically */
+	flex-wrap: wrap; /* Allows the child elements to wrap onto the next line if they exceed the container's width */
+	gap: 20px; /* Sets a 20px spacing between the child elements in both the horizontal and vertical directions */
+}
+
+.recipe_bottom{
+	clear:both;
+	width:100%;
+	display:flex;
+	flex-wrap:wrap;
+	gap:20px;
+}
+
+/*Image*/
+.recipe_image{
+	float:left;
+	width:45%;
+	margin-left:2%;
+	margin-top:4%;
+	text-align:center;
+	flex:1;
+}
+
+.recipe_image img{
+	border-radius:10%;
+	box-shadow: 0px 9px 15px rgba(0, 0, 0, 0.15);
+}
+
+/*Recipe description*/
+.recipe_description{
+	float:left;
+	padding: 50px 0;
+	width:45%;
+	margin-right:2%;
+	margin-top:1%;
+	text-align:center;
+	flex:1;
+}
+
+table.recipe{
+	box-shadow: 0px 9px 15px rgba(0, 0, 0, 0.15);
+	margin:auto;
+	border:1px dashed grey;
+}
+
+/*Ingredient & Methods*/
+.recipe_ingredient{
+	width:35%;
+	margin-left:4%;
+	margin-right:0.5%;
+	margin-top:1%;
+}
+
+.recipe_method{
+	width:50%;
+	margin-left:0.5%;
+	margin-right:1%;
+	margin-top:1%;
+}
+
+.recipe_ingredient, .recipe_method {
+	float:left;
+	padding:2% 2%;
+	margin-bottom:5%;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	flex:1;/*allows the item to grow and take up available space proportionally*/
+}
+.video {
+    position: relative;
+    width: 90%;
+    max-width: 800px; 
+    margin: 20px auto;
+    aspect-ratio: 16/9; /* Maintain 16:9 aspect ratio */
+}
+
+.video iframe {
+    width: 90%; 
+    height: 100%;
+    border:none;
+	margin: 4%;
+	text-align:center;
+}
+
+@media (max-width: 850px) {
+    .recipe_row {
+        flex-direction: column; /* Stack items vertically */
+    }
+    .recipe_image, .recipe_description, .recipe_ingredient, .recipe_method {
+        flex: none; /* Remove equal width constraints */
+        width: 90%; 
+    }
+	
+	.video{
+		width:90%;
+	}
+}
+.recipe, .unordered{
+	font-family: Roboto, Sans-serif;
+}
+ol.recipe li{
+	line-height: 2%;
+}
+table.recipe td, table.recipe th{
+	border: 1px solid black;
+	text-align:left;
+	padding:2%;
+	width:2px;
+	border:1px dashed grey;
+} 
+table.recipe th{
+	background-color:#fcf6db;
+}
+
+table.recipe td{
+	background-color:#c5eff5;
+}
+
+table.recipe th.table_title{
+    text-align:center;
+    background-color:#fffcba;
+    font-size:1.2em;
+}
+
+table.recipe{
+	border-collapse:collapse;
+	table-layout:auto;
+	width:70%;
+}
+
+h1.recipe{
+	font-size: 2.2em;
+    color:#ff6f61;
+    text-align: center;
+	text-shadow:2px 2px 5px rgba(81, 24, 73, 0.3);
+	font-family: Tahoma, Sans-serif;
+}
+
+h2.recipe{
+	text-decoration:underline;
+	color:#ff6f61;
+}
+
+h3.recipe{
+	color:#ff6f61;
+}
+
+ol.recipe li{
+	font-size:1.25em;
+}
+
+ol.recipe li{
+	font-family: Tahoma, Sans-serif;
+	font-size:1.25em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+ul.unordered li {
+	font-size:1em;
+}
+
+.video{
+	margin: 4%;
+	text-align:center;
+}
+/*Cook mode in recipe pages*/
+.cook-mode-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 100%;                
+    margin: 0;                 
+    padding:  10px;            
+    box-sizing: border-box; /* Ensure content-box sizing */
+}
+#cook-mode-btn {
+    background-color: #f252fa;  
+    color: white;               
+    border: 1.5px solid #7b107c;
+    padding: 1% 4%;   
+	margin-bottom:2%;
+    font-size: 1.2em;            
+    border-radius: 50px;       
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect and slight transform */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /*Depth button*/
+}
+
+/* Button hover and active effects */
+#cook-mode-btn:hover {
+    background-color: #e146db; 
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3); /*Enhance shadow on hover*/
+}
+
+#cook-mode-btn:active {
+    background-color: #a43ea3;  
+    transform: scale(0.98); /* Slightly shrink the button when clicked */
+}
+
+/*--Grain Product, Meat, Vegetable (Recipe category pages)---------------------------------------------------*/
+/*Article background color*/
+.category_background{
+	background-color:#e4fcd0;
+}
+/*Banner image & Title*/
+.box_grainp, .box_meat, .box_vege {
+    display: flex;
+    flex-direction: column; /* Stack title and images vertically */
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+	padding: 6%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.box_grainp{
+	background-image: url(images/banner/gpbanner2.jpg); /*This information is taken from https://www.freepik.com/premium-photo/fragrant-wok-rice-with-chicken-vegetables_45412564.htm */
+	background-color: #ffcc00; /* Add a warm golden background */
+}
+
+.box_meat{
+	background-image: url(images/banner/meatbanner.jpg); /*This information is taken from https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%2Fimages%3Fk%3Dmeat%2520banner&psig=AOvVaw0GwtKfUOlqIzVYIUBXlhT2&ust=1729319125884000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJCN_JSml4kDFQAAAAAdAAAAABAE */
+	background-color: #d43f00; /* Rich red-orange for meat */
+}
+
+.box_vege{
+	background-image: url(images/banner/vegebanner2.jpg); /*This information is taken from https://images.app.goo.gl/AQbgMXQKEp3ERwAQ9 */
+	background-color: #4caf50; /* Fresh green for vegetables */
+}
+
+.categories_h1{
+	font-size: 2.2em; 
+	letter-spacing: 1px; /* Slight spacing for readability */
+	background-color: rgba(255, 255, 255, 0.8); /* 80% opacity */
+	margin: auto;
+	padding: 1%;
+	min-width:35%;
+    color: #000000;
+	text-align: center;
+	border-radius: 25px;
+	box-shadow: 0 4px 6px rgba(145, 145, 142, 0.4); /* Soft shadow with transparency */
+}
+
+/* General styles for images */
+.img_left{
+	display: inline-block;
+	float: left;
+	border-radius: 20px;
+	max-width: 100%; /* Ensure images don't overflow */
+    height: auto;
+    margin-right: 1%; /* For spacing between images */
+}
+
+.img_right{
+	display: inline-block;
+	float: right;
+	border-radius: 50px;
+	max-width: 100%; /* Ensure images don't overflow */
+    height: auto;
+    margin-left: 1%; /* For spacing between images */
+}
+.img_left img, .img_right img {
+    transition: transform 0.2s ease-in-out;
+}
+
+.img_left img:hover, .img_right img:hover {
+    transform: scale(1.05); /* Slightly enlarges image on hover */
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds depth on hover */
+}
+/*Star (Level of difficulty)*/
+.fa.fa-star.checked{
+    color: #e88b10; 
+}
+
+.fa.fa-star.checked:hover{
+    transform: scale(1.2);
+    transition: transform 0.2s ease;
+}
+
+/* Content sections */
+.position1, .position2, .position3, .position4 {
+    max-width: 85%; /* Sets a maximum width for centering */
+    margin: 1% auto; /* Centers and adds vertical space */
+    padding: 2.3%;
+    background-color: #fec0ff;
+    clear: both; /* Prevents overlapping */
+    text-align: left;
+	font-size: 1.1em;
+	border-radius: 10px;
+    box-shadow: 0 4px 15px; /* Soft shadow to add depth */
+}
+
+table.categories_page th, table.categories_page td{
+    text-align: left;
+	padding: 12px;
+	font-size:1.1em;
+}
+
+table.categories_page th{
+    text-align: left;
+	font-size: 1.7em;
+	padding: 10px;
+	color: #c21a17;
+    border-bottom: 2px solid #C21A17;
+}
+
+.bold{
+	font-weight:bold;
+}
+/* Responsive styling(on smaller screen) */
+@media (max-width: 768px){
+    .position1, .position2, .position3, .position4 {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        width: 100%;
+        float: none;
+		padding: 15px;/* Less padding on smaller screens */
+    }
+    .h1{
+		font-size: 1.1em;
+        padding: 10px;
+        width: 100%;
+    }
+	
+	table.categories_page th{
+        font-size: 1.7em;
+    }
+	
+	.img_left, .img_right{
+        width: 100%; /* Make images take full width on smaller screens */
+        margin: 10px 0; /* Adds vertical space between images */
+    }
+}
+
+/*--About Web Page--------------------------------------------------------------------------*/
+.aboutpage{
+	background-color: #E7F3F9;
+}
+/* About Page Navigation Bar */
+.navi ul li{
+	display: inline;
+	list-style-type: none;
+	margin-right: 2%;
+	background-color: #E4FCD0;
+	padding: 0.5%;
+	font-size: 1.2em;
+	border-radius:10px;
+}
+
+.navi ul li a{
+	text-decoration: none;
+	color: #545454;
+}
+
+.navi ul{
+	text-align: center;
+	font-weight: bold;
+    clear: both;
+	margin: 0;
+}
+
+.navi{
+	padding: 1%;
+	position: sticky;
+    top: 0;
+    z-index: 1000;
+	background-color: rgb(231, 243, 249,0.6);
+}
+.navi ul li a:hover {
+    color: #ffffff;
+    background-color: #545454;
+    border-radius: 5px;
+    padding: 0.5em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/*Banner*/
+.abtus{
+	background-image: url("images/banner/about.jpeg"); /*This information is taken from http://xhslink.com/a/gIg2Mi3BUJ8Y */
+	background-size: cover;
+	padding: 80px 20px;
+	background-position: center;
+	background-repeat: no-repeat;
+
+}
+.abtush1{
+	font-size: 2.4em; 
+	letter-spacing: 1px; /* Slight spacing for readability */
+	background-color: rgba(255, 255, 255, 0.8); /* 80% opacity */
+	margin: auto;
+	padding: 1px;
+	width: 40%;
+    color: #000000;
+	text-align: center;
+	border-radius: 25px;
+	box-shadow: 0 4px 6px rgba(145, 145, 142, 0.4); /* Soft shadow with transparency */ 
+}
+
+/*Personal Information*/
+.pi, .pi2{
+	display: flex;
+	flex-wrap:wrap;
+	justify-content: center; /* Center horizontally */
+	align-items: center;     /* Center vertically */
+	min-height: 10vh;       /* Full viewport height */
+	margin: 0;
+	padding: 0;
+	margin-left: 10%;
+	font-family: Tahoma, Sans-serif;
+	font-size: 1.2em;
+}
+
+.pi{
+	display: flex;
+    flex-direction: row; /* Align items horizontally */
+    align-items: center;
+    gap: 20px; /* Space between image and text */
+    max-width: 80%;
+    padding: 1%;
+    box-sizing: border-box; /*control the total width and height */
+}
+.pi2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    max-width: 80%;
+    padding: 1%;
+    box-sizing: border-box;
+}
+
+/* Amy (text) */
+.amy{
+	flex: 1 1 60%; /* Allows text to take up 60% of the width */
+    background-color: #F5F5DC;
+    padding: 1%;
+	padding-left: 5%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* add shadows */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+	max-width:62%;
+}
+.amy p{
+	text-align:left;
+}
+.amy ul {
+    padding-left: 0;
+}
+
+.amy li {
+    margin-bottom: 1%;;
+}
+
+/* Amy (image) */
+.amypic{
+	flex: 1 1 40%;
+    max-width: 30%;
+	width:20%;
+}
+
+.amypic img{
+	width: 100%; /* Makes the image responsive */
+	height: auto;
+	border-radius: 5px;
+}
+
+/* Shanghaijiaotong (image) */
+.shjt {
+    flex: 1 1 30%;
+    max-width: 40%; 
+}
+
+.shjt img {
+    width: 100%; 
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Education (text) */
+.edu {
+    flex: 1 1 60%; /* Allows text to take up 60% of the width */
+    padding: 2%;
+	padding-left: 5%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	background-color: #F5F5DC;
+}
+.edu p{
+	text-align:left;
+}
+.edu ul {
+    padding-left: 0;
+}
+
+.edu li {
+    margin-bottom: 1%;
+}
+/*Signature style*/
+.yellowcolour{
+	background-color: #F3EAC0;
+	display: flex;
+	flex-direction: column;
+	gap: 0;		
+	width:90%;
+	margin:2% auto;
+	border-radius: 12px; 
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1); 
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.yellowcolour p{
+	font-size: 1.2em;
+	font-family: Tahoma,Sans-serif;
+	color: #545454;
+	text-align: justify;
+	line-height: 1.6;
+}
+.fig{
+	width: 100%;
+	text-align: center;
+	margin-top: 2%;
+}
+.fig img {
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+div.focus{
+	float: left;
+	flex: 1 1 25%; 
+    max-width: 20%;
+	margin-left: 10%;	
+}
+div.focus img{
+	width: 100%;
+	border-radius: 5px;
+}
+div.spe{
+	float: left;
+	flex: 1 1 25%; 
+    max-width: 20%; 
+	margin-left: 10%;
+}
+div.spe img{
+	width: 100%;
+	border-radius: 5px;
+}
+div.cal{
+	float: left;
+	flex: 1 1 25%; 
+    max-width: 20%; 
+	margin-left: 10%;
+}
+div.cal img{
+	width: 100%;
+	border-radius: 5px;
+}
+#hr{
+	border:2px dashed green;
+	width:80%;
+	text-align:center;
+}
+/*Passion*/	 
+div.passion{
+	text-align: center;	
+	width:80%;
+	margin:auto;
+}
+.passion h1, .passion h2 {
+    color: #D1495B; /* Warm red for passion theme */
+	text-align:center;
+}
+.aboutpage h1, .aboutpage h2 {
+	font-size: 1.4em;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
+}		  
+
+/*Expereince*/
+.experience{
+	background-color: #B5F1CC;
+	padding: 1%;
+	margin: 0;
+	width:95%;
+	margin:2% auto;
+	border-radius: 10px;
+}
+
+/*Beijing*/
+div.beijing{
+	background-color: #FCF6DB;
+	width: 95%;
+	margin: 2% auto;
+	padding:2% 0;
+	height: auto;
+	border-radius: 15px;
+	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+}	
+.chef2{
+	float: left;
+	margin: 1% 1%;
+}
+
+.bjword{
+	float: left;
+	display: inline;
+	width: 50%;
+	margin-left: 2%;
+	margin-right: 2%;
+	padding-top:2%;
+}
+
+.bjword p{
+	font-size: 1.1em;
+	font-family:Tahoma,Sans-serif;
+	color: #545454;
+	text-align: justify;
+	line-height: 1.6;
+}
+.chef1{
+	margin: 2% 1%;
+	width: 100%;
+}
+ .aboutpage h3{
+	text-align: center;
+    font-size: 1.2em;	
+	padding-top: 1%;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
+}
+
+/*Chengdu*/
+div.chengdu{
+	background-color: #FCF6DB;
+	width:95%;
+	margin: 2% auto;
+	padding-bottom:2%;
+	height:auto;
+	min-height:220px;
+	border-radius: 15px;
+	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.aboutpage h4{
+    margin-top: 3%;
+	font-size: 1.1em;
+	padding-top: 4.5%;
+}
+
+.cdword{
+	width:60%;
+	text-align: center;
+	padding-left: 10%;
+	padding-right:5%;
+	padding-top:4%;
+	float:left;
+}
+
+.cdword p{
+	font-size: 1.1em;
+	font-family:Tahoma,Sans-serif;
+	color: #545454;
+	text-align: justify;
+	line-height: 1.6;
+}
+
+.chgdu{
+	width: 100%;
+	padding-top:3%;
+}
+
+.aboutpage h5{
+	font-size: 1.1em;
+	padding-top: 2%;
+	text-align: center;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
+}
+/*Chef Competition*/
+.winhcc{
+	background-color: #FCF6DB;
+	width: 95%;
+	margin:2% auto;
+	margin-top: 2%;
+	border-radius: 15px;
+	max-width: 100%;
+	height: auto;
+	min-height:260px;
+	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+	clear:both;
+}
+
+.trophy{
+	padding-left: 6%;
+	padding-top: 2%;
+	float: left;
+	width:10%;
+}
+	
+.chaword{
+	width:80%;
+	padding-left: 6%;
+	padding-top:1.5%;
+}
+
+.chaword p{
+	font-size: 1.1em;
+	font-family:Tahoma,Sans-serif;
+	color: #545454;
+	text-align: justify;
+	line-height: 1.6;
+}
+
+/*Dietitian*/
+.dietitian{
+	background-color: #FCF6DB;
+	width: 95%;
+	margin:2% auto;
+	margin-top: 2%;
+	border-radius: 15px;
+	max-width: 100%;
+	height: auto;
+	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.aboutpage h6{
+	font-size: 1.1em;
+	text-align: center;
+}
+.dttword{
+	width: 60%;
+	padding-left:5%;
+	padding-right:5%;
+	float:left;
+}
+.dttword p{
+	font-size: 1.2em;
+	font-family:Tahoma,sans-serif;
+	padding-left: 10%;
+	color: #545454;
+	text-align: justify;
+	line-height: 1.6;
+}
+
+.imgdtt{
+	width:100%;
+	padding:1%;
+}
+
+.imgdtt img{
+	border-radius: 8px 8px;
+}
+/* Responsive styling(on smaller screen) */
+@media (max-width: 768px) {
+	.amy, .edu, .amypic, .shjt {
+        flex: 1 1 100%; /* Make each section full-width */
+        max-width: 100%; /* Ensure it doesn't overflow */
+    }
+	
+	.navi ul li{
+        font-size:1.1em;
+		line-height:2;
+    }
+	.beijing, .chengdu, .winhcc, .dietitian{
+		display:flex;
+		flex-wrap:wrap;
+	}
+	.chef2, .bjword, .cdword, .chaword, .trophy, .dttword{
+		margin:auto;
+	}
+	.chef1, .chgdu, .imgdtt{
+		text-align:center;
+	}
+}
+/*--Feedback Page----------------------------------------------------------------------------------*/
+.body_feedback{
+    background-color: #E4FCD0;
+	display: flex;
+	height: 100%;
+	margin: 0;
+	align-items: center; /* Centers vertically */
+	justify-content: center; /* Centers horizontally */
+	font-family: Tahoma, Sans-serif;
+}
+
+.fbh1{
+    position: relative; /* Allow positioning relative to the page */
+    top: 1%; /* Stick it to the top */
+    left: 45%; /* Start at the horizontal center */
+    transform: translateX(-50%); /* Adjust to truly center */
+    padding: 1%;
+    font-size: 1em;
+	color: #004AAD;
+	text-align: center;
+	width:90%;
+}
+
+.feedbackform{
+    position: relative;
+    background-image: url(images/feedback/picfeedback.png);/*This image is created using canva*/
+    background-repeat: no-repeat;
+    background-size: cover; /* Stretches to cover the entire container */
+    background-position: center center; /* Centers the background */
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+    padding: 1%;
+    border-radius: 10px; 
+    align-items: center;
+    height: 100%; 
+    width: 98%; /* Ensures it spans the entire width */
+    justify-content: center; /*Center the form vertically*/
+    text-align: left;
+}
+
+.feedback{
+	width: 100%;
+	max-width: 700px;
+	padding: 0;
+	background-color: #d4f0f4;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Custom focus effect */
+}
+
+legend{
+	font-weight: bold;
+}
+
+fieldset{
+	margin-bottom: 1%;
+}
+
+td{
+	padding: 1.5%;
+}
+
+article p{
+	text-align: center;
+}
+
+.form input:focus, .form select:focus, .form textarea:focus {
+    border-color: #004AAD;
+    box-shadow: 0 0 5px rgba(0, 74, 173, 0.5); /* Custom focus effect */
+    outline: none;
+}
+
+.button input{
+	background-color: #c9f4aa;
+    color: #000000;
+    border: 1.5px solid black;
+    padding: 1% 2%;
+    margin: 1%;
+    cursor: pointer; /* Show when the mouse pointer is over an element */
+    border-radius: 10px;
+    font-size: 1.1em;
+	box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button input:hover, .button input:focus{
+    background-color: #adf876;
+	box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Apply to all select elements */
+select{
+    height: 30px;
+}
+
+/* Apply to all text inputs */
+input[type="text"] {
+    height: 20px;
+    padding: 5px;
+}
+	
+/*The Web Chefs Page*/
+article.twcbody{
+	background-color: #eafaf1;
+	padding-bottom:4%;
+	font-family: Tahoma, Sans-serif;
+} 
+.twcbanner{
+	background-image: url(images/banner/thewebchef.jpg); /*This information is taken from  https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.hellofresh.co.uk%2F&psig=AOvVaw3Ys3HRmyP8tROzVvxRRcpw&ust=1732179435896000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKCkzbHF6okDFQAAAAAdAAAAABAE*/
+	padding: 8% 2%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.twch1{
+	font-size: 2.4em; 
+	letter-spacing: 1px; /* Slight spacing for readability */
+	background-color: rgba(255, 255, 255, 0.8); /* 80% opacity */
+	margin: auto;
+	padding: 0.1%;
+	width: 35%;
+    color: #000000;
+	text-align: center;
+	border-radius: 25px;
+	box-shadow: 0 4px 6px rgba(145, 145, 142, 0.4); /* Soft shadow with transparency */
+}
+
+div.whole {
+	margin: 3% 2%;
+}
+.twc_title{
+	font-weight:bold;
+	color:#5c8a68;
+}
+div.tiff{
+	float: left;
+	background-color: #b5f1cc;
+	width: 30%;
+	border-radius: 10px;
+	margin-left: 2.5%;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tiffimg{
+	text-align: center;
+	padding-top: 10%;
+}
+
+div.tiff p{
+	font-size: 1.2em;
+	text-align: center;
+	font-family: Tahoma, Sans-serif;
+}
+
+.angie{
+	float: left;
+	display: block;
+	background-color: #e4fcd0;
+	width: 30%;
+	border-radius: 10px;
+	margin-left: 2.5%;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s, box-shadow 0.3s; /* Smooth animation */
+}
+
+.angieimg{
+	text-align: center;
+	padding-top: 10%;
+}
+
+.angie p{
+	font-size: 1.2em;
+	text-align: center;
+	font-family: Tahoma, Sans-serif;
+}
+
+.jiaxuan{
+	float: left;
+	display: block;
+	background-color: #c9f4aa;
+	width: 30%;
+	border-radius: 10px;
+	margin-left: 2.5%;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s, box-shadow 0.3s; /* Smooth animation */
+}
+
+.jiaxuan p{
+	font-size: 1.2em;
+	text-align: center;
+	font-family: Tahoma, Sans-serif;
+}
+
+.jximg{
+	text-align: center;
+	padding-top: 10%;
+}
