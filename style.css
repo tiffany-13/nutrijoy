@@ -68,6 +68,17 @@ body, footer, header{
 		display:none;
 	}
 }
+@media (max-height: 400px) {
+	.socmedlogo {
+		display:relative;
+        top: 35%;
+        right: 1%;
+		z-index:1000;
+    }
+    .socmedlogo img {
+        height: 50px; /* Reduce size for smaller screens */
+    }
+}
 /* Navigation bar */
 nav {
     width: 100%;
