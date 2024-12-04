@@ -218,14 +218,14 @@ nav ul li .dropdown li a:hover {
 footer {
   color: #333333;
   padding: 2% 1%;
-  width:99%;
+  width:98%;
   font-family: Tahoma, sans-serif;
   background-color:#e8ede9;
 }
 .footer-container {
   display: flex;
   flex-direction: row; /*elements arranged vertically from top to bottom*/
-  width:99%;
+  width:98%;
   align-items: center;
 }
 
