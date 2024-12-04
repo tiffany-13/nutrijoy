@@ -64,11 +64,6 @@ body, footer, header{
         height: 50px; /* Reduce size for smaller screens */
     }
 }
-@media (max-height: 400px) {
-	.socmedlogo {
-		display:none;
-	}
-}
 /* Navigation bar */
 nav {
     width: 100%;
