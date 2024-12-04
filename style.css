@@ -71,8 +71,8 @@ body, footer, header{
 @media (max-height: 400px) {
 	.socmedlogo {
 		display:relative;
-        top: 20%;
-        right: 1%;
+        top: 40%;
+        right: 2%;
 		z-index:1000;
     }
     .socmedlogo img {
@@ -225,14 +225,14 @@ footer {
 .footer-container {
   display: flex;
   flex-direction: row; /*elements arranged vertically from top to bottom*/
-  width:100%;
+  width:98%;
   align-items: center;
 }
 
 /* Footer Social Media Section */
 .footer-social {
   text-align: center;
-  width:25%;
+  width:24%;
   padding-bottom:1%;
   text-align:center;
 }
@@ -261,7 +261,7 @@ footer {
 /* Footer Links Section */
 .footer-links {
   display: flex;
-  width: 75%;
+  width: 73%;
   text-align:left;
 }
 
