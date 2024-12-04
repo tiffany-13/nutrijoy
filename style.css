@@ -63,7 +63,7 @@ body, footer, header{
         height: 50px; /* Reduce size for smaller screens */
     }
 }
-@media (max-height: 900px) {
+@media (min-height: 900px) {
 	.socmedlogo {
 		display:none;
 	}
