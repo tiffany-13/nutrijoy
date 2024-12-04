@@ -33,7 +33,6 @@ body, footer, header{
 }
 /*Header Social media image links*/
 .socmedlogo{
-	display:inline-block;
 	position:absolute;
 	right:17%;
 	top:30%;
@@ -64,6 +63,11 @@ body, footer, header{
     .socmedlogo img {
         height: 50px; /* Reduce size for smaller screens */
     }
+}
+@media (max-height: 480px) {
+	.socmedlogo {
+		display:none;
+	}
 }
 /* Navigation bar */
 nav {
