@@ -320,8 +320,11 @@ footer {
   text-decoration: underline;
 }
 @media (max-width: 768px) {
-	footer h4, footer h5 a, .footer-links ul li a{
-		font-size:1em;
+	.footer-social h4, .footer-links h5 a{
+		font-size:1.1em;
+	}
+	.footer-links ul li a{
+		font-size:0.9em;
 	}
 }
 /*---Home page--------------------------------------------------------------------------*/
