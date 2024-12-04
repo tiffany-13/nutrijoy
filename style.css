@@ -321,7 +321,7 @@ footer {
 }
 @media (max-width: 768px) {
 	.footer-social h4, .footer-links h5 a{
-		font-size:1.1em;
+		font-size:1em;
 	}
 	.footer-links ul li a{
 		font-size:0.9em;
