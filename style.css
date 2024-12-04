@@ -52,7 +52,7 @@ body, footer, header{
    - "8px": Blur radius, making the shadow softer as it spreads.
    - "rgba(0, 0, 0, 0.2)": Shadow color is black with 20% opacity*/
 }
-@media (max-width: 770px) {
+@media (max-height: 700px) {
     .socmedlogo {
 		display:relative;
         top: 30%;
@@ -63,7 +63,7 @@ body, footer, header{
         height: 50px; /* Reduce size for smaller screens */
     }
 }
-@media (max-height: 700px) {
+@media (max-width: 770px) {
 	.socmedlogo {
 		display:none;
 	}
