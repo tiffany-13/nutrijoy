@@ -71,7 +71,7 @@ body, footer, header{
 @media (max-height: 400px) {
 	.socmedlogo {
 		display:relative;
-        top: 40%;
+        top: -10%;
         right: 2%;
 		z-index:1000;
     }
