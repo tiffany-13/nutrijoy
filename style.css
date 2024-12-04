@@ -320,7 +320,7 @@ footer {
   text-decoration: underline;
 }
 @media (max-width: 768px) {
-	.footer-social h4, .footer-links h5 a{
+	.footer-social h4, .footer-links h5 a, .footer-bottom{
 		font-size:1em;
 	}
 	.footer-links ul li a{
